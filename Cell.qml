@@ -11,6 +11,7 @@ Item {
 		id:rectangle;
 		border.color : "white";
 		anchors.fill : parent;
+		radius: width/2;
 	}
 	
 	MouseArea {

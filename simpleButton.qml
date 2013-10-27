@@ -10,6 +10,7 @@ Rectangle {
 		anchors.centerIn: parent;
 		text: "Button label";
 	}
+	
 	MouseArea {
 		id: buttonMouseArea;
 		// His parent is Rectangle
