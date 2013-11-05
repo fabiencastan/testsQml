@@ -59,10 +59,10 @@ Rectangle{
 		anchors.bottom: screen.bottom
 		
 		Button {
-            anchors { left: parent.left; verticalCenter: parent.verticalCenter }
-            text: "New Game"
-            onClicked: Game.startNewGame()
-        }
+		    anchors { left: parent.left; verticalCenter: parent.verticalCenter }
+		    text: "New Game"
+		    onClicked: Game.startNewGame()
+		}
 		
 		Text {
 			id: score

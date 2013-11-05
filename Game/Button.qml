@@ -5,7 +5,7 @@ Rectangle {
 
     property string text: "Button"
 
-    signal clicked
+    signal clicked;
 
     width: buttonLabel.width + 20; height: buttonLabel.height + 5
     border { width: 1; color: Qt.darker(activePalette.button) }
