@@ -1,54 +1,45 @@
-import QtQuick 2.0
+import QtQuick 2.1
 import QtQuick.Controls 1.0
 import QtQuick.Layouts 1.0
 
-ApplicationWindow{
+ApplicationWindow {
 	id: browser
 	width: 1000
 	height : 600
 
-	GroupBox{
-		ColumnLayout{
-	
-			HeaderBar{
-				//anchors.top: parent.top
-				id: headerBar
-				width: parent.width
-				height: 40
-			}
-		}
-	}
+	ColumnLayout {
+	    anchors.fill: parent
+	    HeaderBar {
+		    //anchors.top: parent.top
+		    id: headerBar
+		    Layout.fillWidth: true
+		    Layout.preferredHeight: 40
+	    }
 
-	GroupBox{
-		GridLayout{
-			columns:2
+	    RowLayout {
+	        Layout.fillWidth: true
+	        Layout.fillHeight: true
 
-			LeftCol{
-				//anchors.top: headerBar.bottom
-				height: 700
-				id: left
-				width: parent.width / 3
-			}
+		    LeftCol {
+			    id: left
+		        Layout.preferredWidth: 100
+	            Layout.fillHeight: true
+		    }
 
-			WindowFiles{
-				//anchors.top: headerBar.bottom;
-				//anchors.right: parent.right
-				height: 700
-				id: files
-				width: parent.width* 2/3
-				folder: headerBar.text
-			}
-		}
-	}
+		    WindowFiles {
+			    id: files
+		        Layout.fillWidth: true
+	            Layout.fillHeight: true
+			    
+			    folder: headerBar.text
+		    }
+	    }
 
-	GroupBox{
-		ColumnLayout{
-			FooterBar{
-				//anchors.bottom: parent.bottom
-				id: footerBar
-				width: parent.width
-				height: 40
-			}
-		}
-	}
+	    FooterBar {
+		    id: footerBar
+	        Layout.fillWidth: true
+		    Layout.preferredHeight: 40
+	    }
+    }
 }
+
