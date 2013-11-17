@@ -2,19 +2,22 @@ import QtQuick 2.0
 
 Rectangle {
 	id: footer;
-	color : "lightgray"
+	color: "lightgray"
 
 	Row{
-		anchors.right: parent.right;
-		spacing: 6;
+		y: 3
+		anchors.right: parent.right
+		spacing: 6
 
 		Button{
-			id: openButton;
-			text: "Open";
+			id: openButton
+			text: "Open"
 		}
 		Button{
-			id: cancelButton;
-			text: "Cancel";
+			id: cancelButton
+			text: "Cancel"
+
+			onButtonClick: Qt.quit();
 		}
 		
 	}

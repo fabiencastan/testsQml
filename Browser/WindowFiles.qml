@@ -1,25 +1,44 @@
 import QtQuick 2.0
+import Qt.labs.folderlistmodel 1.0
 
 Rectangle{
 	id: winFile;
-	color : "green";
+	color: "green"
 
+	property string folder: "Default"
+	property bool showFocusHighlight: false
+
+	
 	GridView{
-		height : parent.height - 10;
-		width : parent.height - 10;
+		y: 20
+		x: 10
+		height : parent.height
+		width : parent.height
 
-		model: FileModel{}
+		model: FolderListModel{
+			id: folder1
+			folder: winFile.folder
+			showDirsFirst: true
+		}
 		delegate: Column {
-			Image{
-				source: icon;
-				sourceSize.width : 100;
-				sourceSize.height : 50;
-				anchors.horizontalCenter: parent.horizontalCenter;
+			//if ()
+			/*Image{
+				x: 25
+				source: winFile.folder+"/"+fileName
+				sourceSize.width: 40
+				sourceSize.height: 40
+			}	*/	
+			Text{
+				text: fileName;
+				anchors.horizontalCenter: parent.horizontalCenter
+
+				MouseArea{
+					id: mouseRegion
+					onPressed: console.log(" clicked");
+				}
 			}
-			Text {
-				text: name;
-				anchors.horizontalCenter: parent.horizontalCenter;
-			}
+			
 		}
 	}
+
 }
